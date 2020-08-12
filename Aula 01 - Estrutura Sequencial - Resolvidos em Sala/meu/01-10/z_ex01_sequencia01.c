@@ -1,13 +1,13 @@
 /*
 Obter o nome e a idade de um usuário e escrever na tela a seguinte mensagem: Hello! FULANO, você tem XX anos!
 
-  Entrada de dados:
+  Entradas:
     nome, idade
 
-  Saida de dados:
+  Saidas:
     msg = "Hello, <NOME>!, voce tem <IDADE> anos"
   
-  Processo:
+  Processamento:
     obter nome
     obter idade
     mostrar mensagem

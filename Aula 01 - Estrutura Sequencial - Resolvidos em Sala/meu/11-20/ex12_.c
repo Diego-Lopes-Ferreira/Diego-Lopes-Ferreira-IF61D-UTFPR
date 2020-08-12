@@ -8,23 +8,18 @@
     numero
   processamento:
     Perguntar pro usuário
-    Atribuir para o 
+    Atribuir para uma variavel
+    voltar para o usuario o que ele digitou
 */
 #include <stdio.h>
 
 int main () {
-	int N1, N2, SOMA;
+	int n1;
 	
-  printf("Digite o primeiro número: ");
-	scanf("%d", N1);
+  printf("Digite um numero: ");
+	scanf("%d", &n1);
 	
-  printf("Digite o segundo número: ");
-	scanf("%d", N2);
-	
-  SOMA = N1 + N2;
-	
-  printf("A soma é: ");
-	printf(SOMA);
+  printf("Voce digitou %d ;)", n1);
   
   return 0;
 }
