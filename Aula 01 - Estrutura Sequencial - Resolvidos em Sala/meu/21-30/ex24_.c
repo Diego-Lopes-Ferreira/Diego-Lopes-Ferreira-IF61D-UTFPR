@@ -5,7 +5,6 @@ determinada quantidade de “chopps” e uma pizza grande com uma determinada qu
 coberturas. Escreva um programa que calcule e exiba a conta e, sabendo quantas pessoas estão à mesa,
 quanto cada um deve pagar (não esqueça os 10% do garçom).
 
-
   entradas:
     inteiro quantas pessoas
     
@@ -98,6 +97,7 @@ int main () {
   valorTotal += nDePizzas * precoPizza;
   valorTotal += (nDeQueijo + nDePresunto + nDeBanana) * precoSabores;
   valorTotal += nDeTulipas * precoTulipas;
+  valorTotal = valorTotal * 1.1; //10 por cento do garcom
   printf("  Valor total R$ %.2f \n", valorTotal);
   printf("------------------------- \n");
   printf("COD |  NOME  | QTD | R$ \n");
