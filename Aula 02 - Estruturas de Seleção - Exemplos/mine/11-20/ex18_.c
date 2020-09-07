@@ -59,7 +59,7 @@ int pergunte(char pergunta[256]) {
   return (strcmp(strlwr(user), "sim") == 0);
 }
 
-int calculaIR(float salario, float INSS, float descDependente) {
+float calculaIR(float salario, float INSS, float descDependente) {
   float salarioUtil;
   salarioUtil = salario - INSS - descDependente;
   if (salario <= 1787.77)
@@ -74,7 +74,7 @@ int calculaIR(float salario, float INSS, float descDependente) {
     return ((salario * 0.275) + 826.15);
 }
 
-int calculaINSS(float salario) {
+float calculaINSS(float salario) {
   if (salario <= 1317.07)
     return salario * 0.08;
   else if (salario <= 2195.12)
@@ -85,11 +85,11 @@ int calculaINSS(float salario) {
     return 482.93;  // 4390.24 * 0.11
 }
 
-calculaDescontoPorDependente(float dependentes) {
+float calculaDescontoPorDependente(float dependentes) {
   return (dependentes * 179.71);
 }
 
-int calculaLiquido(float salario, float INSS, float IR, float descDependent) {
+float calculaLiquido(float salario, float INSS, float IR, float descDependent) {
   float salarioFinal;
   salarioFinal = salario - INSS - IR - descDependent;
   return salarioFinal;
