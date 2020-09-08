@@ -65,13 +65,13 @@ float calculaIR(float salario, float INSS, float descDependente) {
   if (salario <= 1787.77)
     return 0;
   else if (salario <= 2679.29)
-    return ((salario * 0.075) + 134.08);
+    return ((salario * 0.075) - 134.08);
   else if (salario <= 3572.43)
-    return ((salario * 0.15) + 335.03);
+    return ((salario * 0.15) - 335.03);
   else if (salario <= 4463.81)
-    return ((salario * 0.225) + 602.96);
+    return ((salario * 0.225) - 602.96);
   else
-    return ((salario * 0.275) + 826.15);
+    return ((salario * 0.275) - 826.15);
 }
 
 float calculaINSS(float salario) {
@@ -89,9 +89,9 @@ float calculaDescontoPorDependente(float dependentes) {
   return (dependentes * 179.71);
 }
 
-float calculaLiquido(float salario, float INSS, float IR, float descDependent) {
+float calculaLiquido(float salario, float INSS, float IR) {
   float salarioFinal;
-  salarioFinal = salario - INSS - IR - descDependent;
+  salarioFinal = salario - INSS - IR;
   return salarioFinal;
 }
 
@@ -117,12 +117,12 @@ int main() {
   IR = calculaIR(salarioBruto, INSS, descDependente);
 
   // Calcula salario liquido
-  salarioFinal = calculaLiquido(salarioBruto, INSS, IR, descDependente);
+  salarioFinal = calculaLiquido(salarioBruto, INSS, IR);
 
-  printf("Salario final           : %.2f \n", salarioFinal);
-  printf("INSS                    : %.2f \n", INSS);
-  printf("Desconto por dependente : %.2f \n", descDependente);
-  printf("Imposto de Renda        : %.2f \n", IR);
-  // printf("Salario Bruto           : %.2f \n", salarioBruto);
+  printf("Salario Bruto             %08.2f \n", salarioBruto);
+  printf("INSS                    - %08.2f \n", INSS);
+  printf("Imposto de Renda        - %08.2f \n", IR);
+  printf("Salario liquido         = %08.2f \n", salarioFinal);
+  // printf("Desconto por dependente : %.2f \n", descDependente);
   return 0;
 }
