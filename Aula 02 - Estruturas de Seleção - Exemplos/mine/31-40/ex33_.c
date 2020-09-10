@@ -22,7 +22,6 @@
 
 */
 #include <stdio.h>
-#include <string.h>
 
 int pergunte() {
   int user = 0;
