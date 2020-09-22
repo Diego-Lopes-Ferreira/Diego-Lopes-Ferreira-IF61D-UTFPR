@@ -61,38 +61,41 @@ int main() {
 
   printf("Sua sequencia: %.1f %.1f %.1f \n", n1, n2, n3);
 
-  maior = n1;
-  meio = n2;
-  menor = n3;
-
-  if (n1 > n2) {
-    if (n3 > n2) {
-      maior = n1;
-      meio = n3;
-      menor = n2;
-      if (n3 > n1) {
-        maior = n3;
-        meio = n1;
-        menor = n2;
-      }
-    }
-  } else /* n2 > n1 */ {
-    maior = n2;
-    meio = n1;
+  if (n1 == n2 || n1 == n3 || n2 == n3) {
+    printf("Os numeros nao sao distintos \n");
+  } else {
+    maior = n1;
+    meio = n2;
     menor = n3;
-    if (n3 > n1) {
+
+    if (n1 > n2) {
       if (n3 > n2) {
-        maior = n3;
-        meio = n2;
-        menor = n1;
-      } else {
-        maior = n2;
+        maior = n1;
         meio = n3;
-        menor = n1;
+        menor = n2;
+        if (n3 > n1) {
+          maior = n3;
+          meio = n1;
+          menor = n2;
+        }
+      }
+    } else /* n2 > n1 */ {
+      maior = n2;
+      meio = n1;
+      menor = n3;
+      if (n3 > n1) {
+        if (n3 > n2) {
+          maior = n3;
+          meio = n2;
+          menor = n1;
+        } else {
+          maior = n2;
+          meio = n3;
+          menor = n1;
+        }
       }
     }
+    printf("Em ordem    : %.1f %.1f %.1f \n", menor, meio, maior);
   }
-
-  printf("Em ordem    : %.1f %.1f %.1f \n", menor, meio, maior);
   return 0;
 }
